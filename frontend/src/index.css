@@ -1,0 +1,12 @@
+main {
+  min-height: 80vh;
+  min-width: 100vw;
+}
+
+.h4-price {
+  padding-top: 1rem;
+}
+
+.rm-border {
+  border: none;
+}
