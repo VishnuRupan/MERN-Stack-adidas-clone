@@ -1,6 +1,36 @@
+body {
+  overflow-x: hidden;
+}
+
 main {
   min-height: 80vh;
   min-width: 100vw;
+}
+
+h1 {
+  padding: 2rem 0rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.cart-h1-title {
+  padding-left: 1rem;
+}
+
+.cart-subtotal-title,
+.subtotal-title {
+  margin: 2rem 0rem;
+}
+
+.subtotal-title {
+  text-align: center;
+}
+
+.padding-zero {
+  padding: 0rem;
+  border: none;
 }
 
 .h4-price {
@@ -9,4 +39,31 @@ main {
 
 .rm-border {
   border: none;
+}
+
+.select-form {
+  padding: 0.75rem 0.3rem;
+}
+
+.secondary-container {
+  margin-right: 1rem;
+}
+
+.new-col-md-8 {
+  padding-left: 0rem;
+}
+
+.checkout-nav-item {
+  margin: 0rem;
+  padding: 0rem;
+  padding-right: 0.15rem;
+}
+
+.checkout-componenet {
+  padding: 2rem 0rem;
+}
+
+.order-item-name {
+  padding: 0rem;
+  margin: 0rem;
 }
