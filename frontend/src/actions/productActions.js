@@ -30,6 +30,8 @@ export const listProducts = (keyword = "", pageNumber = "") => async (
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
+    console.log("in action", keyword);
+
     const { data } = await axios.get(
       `/api/products?${keyword}&pageNumber=${pageNumber}`
     );
@@ -68,10 +70,6 @@ export const listProductDetails = (id) => async (dispatch) => {
           : error.message,
     });
   }
-};
-
-export const clearProductDetail = () => async (dispatch) => {
-  dispatch({ type: "CLEAR_PRODUCT_DETAILS", payload: {} });
 };
 
 export const deleteProduct = (id) => async (dispatch, getState) => {

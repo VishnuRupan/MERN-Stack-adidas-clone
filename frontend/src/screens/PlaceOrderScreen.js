@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import CheckoutSteps from "../components/CheckoutSteps";
 import { createOrder } from "../actions/orderAction";
+import Meta from "../components/Meta";
 
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const PlaceOrderScreen = ({ history }) => {
   ).toFixed(2);
 
   const orderCreate = useSelector((state) => state.orderCreate);
+
   const { order, success, error } = orderCreate;
 
   useEffect(() => {
@@ -58,7 +60,7 @@ const PlaceOrderScreen = ({ history }) => {
   return (
     <>
       {error && <Message variant="danger"> An error has occured.</Message>}
-
+      <Meta title="Abidas order" />
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>

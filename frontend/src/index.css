@@ -67,3 +67,17 @@ strong {
   padding: 0rem;
   margin: 0rem;
 }
+
+.mr-sm-2,
+.ml-sm-0 {
+  height: 1.5rem;
+  padding-left: 0.5rem;
+}
+.search-btn-1 {
+  border: none;
+  height: 1.5rem;
+}
+
+.search-btn-1 > span {
+  padding: 1rem;
+}

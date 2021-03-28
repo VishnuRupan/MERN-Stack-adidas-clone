@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../actions/cartAction";
+import Meta from "../components/Meta";
 
 const CartScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart);
@@ -30,6 +31,7 @@ const CartScreen = ({ history }) => {
 
   return (
     <>
+      <Meta title="Cart" />
       <Row>
         <Col md={8} className="new-col-md-8">
           <h1 className="cart-h1-title">Shopping Cart</h1>

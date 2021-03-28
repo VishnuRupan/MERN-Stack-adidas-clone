@@ -5,19 +5,28 @@ import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listProducts } from "../actions/productAction";
+import Paginate from "../components/Paginate";
+import Meta from "../components/Meta";
 
-const HomeScreen = () => {
+const HomeScreen = ({ match }) => {
+  // checking for search keyword
+  const keyword = match.params.keyword;
+
+  const pageNumber = match.params.pageNumber || 1;
+
   //
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
+  const { loading, error, products, page, pages } = productList;
 
   useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
+    dispatch(listProducts(keyword, pageNumber));
+  }, [dispatch, keyword, pageNumber]);
 
   return (
     <div>
+      <Meta />
+
       <h1> Products</h1>
 
       {loading ? (
@@ -37,6 +46,12 @@ const HomeScreen = () => {
               </Col>
             ))}
           </Row>
+
+          <Paginate
+            pages={pages}
+            page={page}
+            keyword={keyword ? keyword : ""}
+          />
         </div>
       )}
     </div>
