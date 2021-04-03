@@ -34,7 +34,9 @@ strong {
 }
 
 .h4-price {
-  padding-top: 1rem;
+  padding-top: 0rem;
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 
 .rm-border {
@@ -80,4 +82,20 @@ strong {
 
 .search-btn-1 > span {
   padding: 1rem;
+}
+
+/*///////////////////////////////////*/
+/*  PRODUCT CARD */
+
+.abidas-card {
+  padding: 0rem;
+  margin: 0;
+}
+
+.abidas-card:hover {
+  border: solid 1px rgb(49, 49, 49);
+}
+
+.empty-space {
+  height: 2rem;
 }

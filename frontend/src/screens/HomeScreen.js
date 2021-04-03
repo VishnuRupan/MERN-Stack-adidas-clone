@@ -38,10 +38,17 @@ const HomeScreen = ({ match }) => {
           <Message variant="danger" children={error} />
         </h3>
       ) : (
-        <div className="secondary-container">
+        <div>
           <Row>
             {products.map((product) => (
-              <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+              <Col
+                className="abidas-card"
+                sm={12}
+                md={6}
+                lg={4}
+                xl={4}
+                key={product._id}
+              >
                 <Product product={product} />
               </Col>
             ))}
