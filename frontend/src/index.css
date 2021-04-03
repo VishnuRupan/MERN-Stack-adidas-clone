@@ -15,6 +15,27 @@ strong {
   font-weight: 700;
 }
 
+.shipping-label {
+  height: 1.5rem;
+  width: 100vw;
+  background: black;
+  text-align: center;
+}
+
+.shipping-h4 {
+  color: white;
+  font-size: 0.7rem;
+  padding-top: 0.35rem;
+}
+
+.navbar-brand {
+  font-family: "Arimo", sans-serif;
+}
+
+.py-3 {
+  padding-top: 0rem !important;
+}
+
 .cart-h1-title {
   padding-left: 1rem;
 }
@@ -70,18 +91,99 @@ strong {
   margin: 0rem;
 }
 
+.pagination,
+h1 {
+  padding-top: 2rem !important;
+  margin-left: -1rem !important;
+}
+
+.abidas-nav-ctn {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 0rem 1rem !important;
+  }
+  h1 {
+    padding: 0rem 2rem !important;
+  }
+}
+
+/*////////////////////////////////////////*/
+/*  EXTRA NAV LINKS */
+
+.navbar,
+.navbar-expand-lg,
+.navbar-light,
+.bg-light {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: none;
+}
+
+.abidas-product-nav-links {
+  display: flex;
+  padding-right: 5rem;
+  align-items: center;
+}
+
+.abidas-product-nav-links a {
+  padding-right: 2rem !important;
+}
+
+@media only screen and (max-width: 892px) {
+  .abidas-product-nav-links {
+    flex-direction: column;
+    padding-right: 0rem;
+    align-items: flex-start;
+  }
+
+  .abidas-product-nav-links a {
+    padding: 0.5rem 0rem !important;
+  }
+}
+
+/*////////////////////////////////////////*/
+/*  SEARCH BOX  */
+
 .mr-sm-2,
 .ml-sm-0 {
-  height: 1.5rem;
-  padding-left: 0.5rem;
+  height: 2rem;
 }
+
+.mr-sm-2,
+.mx-sm-2 {
+  margin-right: 0rem;
+}
+
 .search-btn-1 {
   border: none;
-  height: 1.5rem;
+  height: 2rem;
+  background: #f7f7f9;
 }
 
 .search-btn-1 > span {
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+/*////////////////////////////////////////*/
+/*  MOBILE HAMBURDER AND MENU TOGGLE  */
+
+.form-inline {
+  flex-flow: nowrap !important;
+  padding-right: 0.5rem;
+}
+
+.secondary-container,
+.navbar-toggler,
+.secondary-container:active,
+.navbar-toggler:active,
+.secondary-container:focus,
+.navbar-toggler:focus {
+  border: none !important;
+  outline: none !important;
 }
 
 /*///////////////////////////////////*/

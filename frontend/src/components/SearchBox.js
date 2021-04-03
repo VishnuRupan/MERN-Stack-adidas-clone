@@ -25,8 +25,9 @@ const SearchBox = ({ history }) => {
       ></Form.Control>
 
       <button className="search-btn-1" type="submit">
-        {" "}
-        <span>Search</span>{" "}
+        <span>
+          <i className="fas fa-search"></i>
+        </span>
       </button>
     </Form>
   );
