@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
@@ -25,10 +27,9 @@ function App() {
       <Header />
 
       <Route path="/" exact component={PromotionSection} />
-      
 
       <main className="py-3">
-        <Container>
+        <Container fluid="xl">
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
           <Route path="/shipping" component={ShippingScreen} />

@@ -35,6 +35,18 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+
+    sex: {
+      type: String,
+      required: true,
+      default: "Men",
+    },
+
+    color: {
+      type: String,
+      required: true,
+      default: "Black",
+    },
     category: {
       type: String,
       required: true,
@@ -53,6 +65,11 @@ const productSchema = mongoose.Schema(
       type: Number,
       required: true,
       default: 0,
+    },
+    size: {
+      type: String,
+      required: true,
+      default: "M",
     },
     price: {
       type: Number,

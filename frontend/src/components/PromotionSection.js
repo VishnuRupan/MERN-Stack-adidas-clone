@@ -9,7 +9,7 @@ const PromotionSection = () => {
       <div className="info">
         <h1> TRIO 21 SITEWIDE </h1>
         <h1> CLEARANCE </h1>
-        <p> Show now and save up to 50% off regular price clothing.</p>
+        <p> Shop now and save up to 50% off regular price clothing.</p>
 
         <div className="promo-btn">
           <Link className="btn btn-dark my-3" to="/men">
@@ -70,6 +70,11 @@ const PromoContainer = styled.div`
       margin: 0rem;
       padding: 0rem !important;
       white-space: nowrap;
+      font-size: 3rem;
+
+      @media only screen and (max-width: 1024px) {
+        font-size: 2rem;
+      }
 
       @media only screen and (max-width: 500px) {
         white-space: normal;
@@ -80,6 +85,15 @@ const PromoContainer = styled.div`
     p {
       color: black;
       padding: 1rem 0rem;
+      font-size: 1.2rem;
+
+      @media only screen and (max-width: 1024px) {
+        font-size: 1rem;
+      }
+
+      @media only screen and (max-width: 500px) {
+        font-size: 0.8rem;
+      }
     }
   }
 

@@ -12,7 +12,9 @@ const Footer = () => {
       <br />
       <Container>
         <Row>
-          <Col className="text-center py-3">Copyright &copy; Neki</Col>
+          <Col className="text-center py-3">
+            Copyright &copy; Abidas | Not a real site | Demo purposes only
+          </Col>
         </Row>
       </Container>
     </footer>

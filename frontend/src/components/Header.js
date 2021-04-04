@@ -23,7 +23,7 @@ const Header = ({ history }) => {
     <>
       <div className="shipping-label">
         <h4 className="shipping-h4">
-          <i class="fas fa-truck"></i> FREE SHIPPING OVER $100
+          <i className="fas fa-truck"></i> FREE SHIPPING OVER $100
         </h4>
       </div>
       <header style={{ width: "100vw" }}>
@@ -31,7 +31,7 @@ const Header = ({ history }) => {
           <Container className="abidas-nav-ctn">
             <LinkContainer to="/">
               <Navbar.Brand>
-                <i class="fas fa-align-right fa-xs"></i> Abidas
+                <i className="fas fa-align-right fa-xs"></i> Abidas
               </Navbar.Brand>
             </LinkContainer>
 
@@ -63,12 +63,16 @@ const Header = ({ history }) => {
                 <SearchBox />
                 <LinkContainer to="/cart">
                   <Nav.Link>
-                    <i className="fas fa-shopping-cart fa-lg"></i>
+                    <i className="fas fa-shopping-bag fa-lg"></i>
                   </Nav.Link>
                 </LinkContainer>
 
                 {userInfo && userInfo.isAdmin && (
-                  <NavDropdown title="Site Data" id="adminmenu">
+                  <NavDropdown
+                    title="Site Data"
+                    id="adminmenu"
+                    className="adminmenu"
+                  >
                     <LinkContainer to="/admin/userlist">
                       <NavDropdown.Item> Users</NavDropdown.Item>
                     </LinkContainer>

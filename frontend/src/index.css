@@ -11,6 +11,10 @@ h1 {
   padding: 2rem 0rem;
 }
 
+.adminmenu {
+  margin-right: 0.5rem;
+}
+
 strong {
   font-weight: 700;
 }
@@ -94,7 +98,6 @@ strong {
 .pagination,
 h1 {
   padding-top: 2rem !important;
-  margin-left: -1rem !important;
 }
 
 .abidas-nav-ctn {
