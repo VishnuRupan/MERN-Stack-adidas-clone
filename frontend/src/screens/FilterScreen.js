@@ -8,11 +8,14 @@ import Loader from "../components/Loader";
 import { listProducts } from "../actions/productAction";
 import Paginate from "../components/Paginate";
 import Meta from "../components/Meta";
-import InfoSection from "../components/InfoSection";
 
-const HomeScreen = ({ match }) => {
+const FilterScreen = ({ match }) => {
   // checking for search keyword
   const keyword = match.params.keyword;
+
+  const pathname =
+    window.location.pathname.toString().substring(1).charAt(0).toUpperCase() +
+    window.location.pathname.slice(2);
 
   const pageNumber = match.params.pageNumber || 1;
 
@@ -20,13 +23,13 @@ const HomeScreen = ({ match }) => {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
 
-  //
-  const [filterProducts, setFilterProducts] = useState([]);
+  const menProducts = products.filter((p) => p.sex === pathname);
 
   const [priceFilter, setPriceFilter] = useState(false);
   const [catFilter, setCatFilter] = useState(false);
 
   //
+  const [filterProducts, setFilterProducts] = useState([]);
 
   // Sorting Functions
 
@@ -61,22 +64,32 @@ const HomeScreen = ({ match }) => {
 
   const topFilter = () => {
     setFilterProducts(
-      products.sort(highToHigh).filter((p) => p.category === "Top")
+      products
+        .sort(highToHigh)
+        .filter((p) => p.category === "Top")
+        .filter((p) => p.sex === pathname)
     );
   };
 
   const pantFilter = () => {
     setFilterProducts(
-      products.sort(highToHigh).filter((p) => p.category === "Pants")
+      products
+        .sort(highToHigh)
+        .filter((p) => p.category === "Pants")
+        .filter((p) => p.sex === pathname)
     );
   };
 
   const highlow = () => {
-    setFilterProducts(products.sort(highToHigh));
+    setFilterProducts(
+      products.sort(highToHigh).filter((p) => p.sex === pathname)
+    );
   };
 
   const lowhigh = () => {
-    setFilterProducts(products.sort(lowToHigh));
+    setFilterProducts(
+      products.sort(lowToHigh).filter((p) => p.sex === pathname)
+    );
   };
 
   useEffect(() => {
@@ -87,7 +100,44 @@ const HomeScreen = ({ match }) => {
     <div>
       <Meta />
 
-      <h1 style={{ marginLeft: "-1rem" }}> Products</h1>
+      <h1 style={{ marginLeft: "-1rem", fontStyle: "italic" }}>
+        {" "}
+        {pathname}S Clothing
+      </h1>
+
+      <FilterContainer>
+        <h5>Filter: </h5>
+
+        <div className="price-container">
+          <button onClick={priceFilterHandler} className="price-filter">
+            PRICE
+          </button>
+
+          {priceFilter === true ? (
+            <div className="price-filter-container">
+              <button onClick={highlow}> High </button>
+              <button onClick={lowhigh}> Low </button>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
+
+        <div className="price-container">
+          <button onClick={categoryFilterHandler} className="price-filter">
+            CATEGORY
+          </button>
+
+          {catFilter === true ? (
+            <div className="price-filter-container">
+              <button onClick={topFilter}> Tops </button>
+              <button onClick={pantFilter}> Pants </button>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </FilterContainer>
 
       {loading ? (
         <h2>
@@ -99,42 +149,9 @@ const HomeScreen = ({ match }) => {
         </h3>
       ) : (
         <div>
-          <FilterContainer>
-            <h5>Filter: </h5>
-
-            <div className="price-container">
-              <button onClick={priceFilterHandler} className="price-filter">
-                PRICE
-              </button>
-
-              {priceFilter === true ? (
-                <div className="price-filter-container">
-                  <button onClick={highlow}> High </button>
-                  <button onClick={lowhigh}> Low </button>
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
-
-            <div className="price-container">
-              <button onClick={categoryFilterHandler} className="price-filter">
-                CATEGORY
-              </button>
-
-              {catFilter === true ? (
-                <div className="price-filter-container">
-                  <button onClick={topFilter}> Tops </button>
-                  <button onClick={pantFilter}> Pants </button>
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
-          </FilterContainer>
           <Row onMouseOver={onHoverCardsHandler}>
             {filterProducts.length === 0
-              ? products.map((product) => (
+              ? menProducts.map((product) => (
                   <Col
                     className="abidas-card"
                     sm={12}
@@ -167,10 +184,6 @@ const HomeScreen = ({ match }) => {
           />
         </div>
       )}
-
-      <div className="info-con">
-        <InfoSection />
-      </div>
     </div>
   );
 };
@@ -197,7 +210,6 @@ const FilterContainer = styled.div`
     padding: 0.2rem 0.9rem;
   }
 
-
   .price-filter-container {
     position: absolute;
     display: flex;
@@ -217,4 +229,4 @@ const FilterContainer = styled.div`
   }
 `;
 
-export default HomeScreen;
+export default FilterScreen;

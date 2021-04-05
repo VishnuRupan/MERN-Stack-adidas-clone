@@ -94,7 +94,8 @@ const OrderScreen = ({ match, history }) => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+      <h1 className="cart-h1-title">Order</h1>
+      <h1 className="order-id-h1">{order._id}</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant="flush">
@@ -108,9 +109,10 @@ const OrderScreen = ({ match, history }) => {
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
-                <strong>Address:</strong>
-                {order.shippingAddress.address}, {order.shippingAddress.city}{" "}
-                {order.shippingAddress.postalCode},{" "}
+                <strong>Address: </strong> <br />
+                {order.shippingAddress.address} <br />{" "}
+                {order.shippingAddress.city} <br />
+                {order.shippingAddress.postalCode} <br />
                 {order.shippingAddress.country}
               </p>
               {order.isDelivered ? (
@@ -144,7 +146,7 @@ const OrderScreen = ({ match, history }) => {
                   {order.orderItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
-                        <Col md={1}>
+                        <Col md={3} className="padding-zero">
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -156,9 +158,11 @@ const OrderScreen = ({ match, history }) => {
                           <Link to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
-                        </Col>
-                        <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          <br />
+                          <br />
+                          <p> Quantity: {item.qty} </p>
+                          <p> Price: C$ {item.price} </p>
+                          <p> Total: C$ {item.qty * item.price}</p>
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -171,28 +175,28 @@ const OrderScreen = ({ match, history }) => {
         <Col md={4}>
           <Card>
             <ListGroup variant="flush">
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <h2>Order Summary</h2>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <Row>
                   <Col>Items</Col>
                   <Col>${order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <Row>
                   <Col>Shipping</Col>
                   <Col>${order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <Row>
                   <Col>Tax</Col>
                   <Col>${order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <Row>
                   <Col>Total</Col>
                   <Col>${order.totalPrice}</Col>
@@ -218,7 +222,7 @@ const OrderScreen = ({ match, history }) => {
                 userInfo.isAdmin &&
                 order.isPaid &&
                 !order.isDelivered && (
-                  <ListGroup.Item>
+                  <ListGroup.Item className="order-deliver-btn">
                     <Button
                       type="button"
                       className="btn btn-block"

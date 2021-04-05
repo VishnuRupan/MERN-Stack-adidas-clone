@@ -75,7 +75,7 @@ const products = [
     description:
       "Any day. Any weather. This adidas Terrex trail running windbreaker offers weather protection in a lightweight package. WIND.RDY resists wind to keep you comfortable in windy, damp conditions. The low-bulk design stows into a pocket for easy packing. It features Parley Ocean Plastic, upcycled plastic waste intercepted on remote islands, beaches, coastal communities and shorelines, preventing it from polluting our oceans.",
     brand: "Abidas",
-    category: "Jacket",
+    category: "Top",
     sex: "Women",
     color: "Space Grey",
     price: 120,

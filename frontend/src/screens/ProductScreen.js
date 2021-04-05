@@ -160,6 +160,22 @@ const ProductScreen = ({ history, match }) => {
                   </ListGroup.Item>
                 )}
 
+                {product.countInStock > 0 && (
+                  <ListGroup.Item className="rm-border">
+                    <Row className="extra-padding">
+                      <div>Qty &nbsp;</div>
+                      <div>
+                        <Form.Control
+                          className="select-form"
+                          as="input"
+                          value={qty}
+                          onChange={(e) => setQty(e.target.value)}
+                        ></Form.Control>
+                      </div>
+                    </Row>
+                  </ListGroup.Item>
+                )}
+
                 <ListGroup.Item className="rm-border">
                   <div className="product-size-btns">
                     <button className="size-btns" onClick={sizeHandlerXS}>
@@ -188,22 +204,6 @@ const ProductScreen = ({ history, match }) => {
                     {product.countInStock > 0 ? " In Stock" : " Out of Stock"}
                   </span>
                 </ListGroup.Item>
-
-                {product.countInStock > 0 && (
-                  <ListGroup.Item className="rm-border">
-                    <Row className="extra-padding">
-                      <div>Qty &nbsp;</div>
-                      <div>
-                        <Form.Control
-                          className="select-form"
-                          as="input"
-                          value={qty}
-                          onChange={(e) => setQty(e.target.value)}
-                        ></Form.Control>
-                      </div>
-                    </Row>
-                  </ListGroup.Item>
-                )}
 
                 <ListGroup.Item
                   style={{ border: "none" }}

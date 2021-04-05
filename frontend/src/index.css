@@ -19,6 +19,17 @@ strong {
   font-weight: 700;
 }
 
+.footer-p {
+  padding-right: 2rem;
+}
+
+.info-con {
+  width: 100%;
+  margin: 3rem 0rem;
+  border-top: 1px rgb(230, 230, 230) solid;
+  border-bottom: 1px rgb(230, 230, 230) solid;
+}
+
 .shipping-label {
   height: 1.5rem;
   width: 100vw;
@@ -43,14 +54,27 @@ strong {
 .cart-h1-title {
   padding-left: 1rem;
 }
+.shipping-h1 {
+  font-family: "Arimo", sans-serif;
+  font-size: 2.5rem;
+}
 
 .cart-subtotal-title,
 .subtotal-title {
   margin: 2rem 0rem;
 }
 
+.order-id-h1 {
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
 .subtotal-title {
   text-align: center;
+}
+
+.order-deliver-btn {
+  padding: 0rem;
 }
 
 .padding-zero {

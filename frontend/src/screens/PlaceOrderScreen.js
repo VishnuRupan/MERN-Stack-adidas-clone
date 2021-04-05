@@ -69,8 +69,11 @@ const PlaceOrderScreen = ({ history }) => {
               <h2>Shipping</h2>
               <p>
                 <strong>Address:</strong>
-                {cart.shippingAddress.address}, {cart.shippingAddress.city}{" "}
-                {cart.shippingAddress.postalCode},{" "}
+                <br />
+                <br />
+                {cart.shippingAddress.address} <br />{" "}
+                {cart.shippingAddress.city} <br />
+                {cart.shippingAddress.postalCode} <br />
                 {cart.shippingAddress.country}
               </p>
             </ListGroup.Item>
@@ -90,7 +93,7 @@ const PlaceOrderScreen = ({ history }) => {
                   {cart.cartItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
-                        <Col md={1}>
+                        <Col md={3} className="padding-zero">
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -102,9 +105,11 @@ const PlaceOrderScreen = ({ history }) => {
                           <Link to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
-                        </Col>
-                        <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          <br />
+                          <br />
+                          <p> Quantity: {item.qty} </p>
+                          <p> Price: C${item.price} </p>
+                          <p> Total: C$ {item.qty * item.price}</p>
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -117,35 +122,35 @@ const PlaceOrderScreen = ({ history }) => {
         <Col md={4}>
           <Card>
             <ListGroup variant="flush">
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <h2>Order Summary</h2>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <Row>
                   <Col>Items</Col>
-                  <Col>${cart.itemsPrice}</Col>
+                  <Col>C$ {cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>${cart.shippingPrice}</Col>
+                  <Col>C$ {cart.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <Row>
                   <Col>Tax</Col>
-                  <Col>${cart.taxPrice}</Col>
+                  <Col>C$ {cart.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className="rm-border">
                 <Row>
                   <Col>Total</Col>
-                  <Col>${cart.totalPrice}</Col>
+                  <Col>C$ {cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
-              <ListGroup.Item>
+              <ListGroup.Item className="order-deliver-btn">
                 <Button
                   type="button"
                   className="btn-block"

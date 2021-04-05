@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import PromotionSection from "./components/PromotionSection";
 import CartScreen from "./screens/CartScreen";
+import FilterScreen from "./screens/FilterScreen";
 import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
 import OrderListScreen from "./screens/OrderListScreen";
@@ -26,11 +25,77 @@ function App() {
     <Router>
       <Header />
 
-      <Route path="/" exact component={PromotionSection} />
+      <Route path="/" exact>
+        <PromotionSection
+          main={"TRIO 21"}
+          second={"CLEARANCE"}
+          link1={"SHOP MEN"}
+          link2={"SHOP WOMEN"}
+          to1={"/men"}
+          to2={"/women"}
+        />
+      </Route>
+
+      <Route path="/page/:pageNumber" exact>
+        <PromotionSection
+          main={"TRIO 21"}
+          second={"CLEARANCE"}
+          link1={"SHOP MEN"}
+          link2={"SHOP WOMEN"}
+          to1={"/men"}
+          to2={"/women"}
+        />
+      </Route>
+
+      <Route path="/men" exact>
+        <PromotionSection
+          main={"2021 SPORT"}
+          second={"LINEUP"}
+          link1={"SHOP JACKETS"}
+          link2={"SHOP JOGGERS"}
+          to1={"/"}
+          to2={"/"}
+        />
+      </Route>
+
+      <Route path="/women" exact>
+        <PromotionSection
+          main={"2021 SPORT"}
+          second={"LINEUP"}
+          link1={"SHOP JACKETS"}
+          link2={"SHOP TIGHTS"}
+          to1={"/"}
+          to2={"/"}
+        />
+      </Route>
+
+      <Route path="/sports" exact>
+        <PromotionSection
+          main={"NEW NHL GEAR"}
+          second={"CLEARANCE"}
+          link1={"SHOP JERSEY"}
+          link2={"SHOP SHOES"}
+          to1={"/"}
+          to2={"/"}
+        />
+      </Route>
+
+      <Route path="/brands" exact>
+        <PromotionSection
+          main={"AFFILIATED BRANDS"}
+          second={"SEASON 2"}
+          link1={"SHOP BAGS"}
+          link2={"SHOP CAPS"}
+          to1={"/"}
+          to2={"/"}
+        />
+      </Route>
 
       <main className="py-3">
         <Container fluid="xl">
           <Route path="/login" component={LoginScreen} />
+          <Route path="/men" component={FilterScreen} />
+          <Route path="/women" component={FilterScreen} />
           <Route path="/register" component={RegisterScreen} />
           <Route path="/shipping" component={ShippingScreen} />
           <Route path="/payment" component={PaymentScreen} />

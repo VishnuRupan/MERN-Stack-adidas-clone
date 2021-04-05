@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import promo1 from "../img/promo1.jpg";
 import promo2 from "../img/promo2.jpg";
 
-const PromotionSection = () => {
+const PromotionSection = ({ main, second, link1, link2, to1, to2 }) => {
   return (
     <PromoContainer>
       <div className="info">
-        <h1> TRIO 21 SITEWIDE </h1>
-        <h1> CLEARANCE </h1>
+        <h1> {main} </h1>
+        <h1> {second} </h1>
         <p> Shop now and save up to 50% off regular price clothing.</p>
 
         <div className="promo-btn">
-          <Link className="btn btn-dark my-3" to="/men">
-            SHOP MEN'S
+          <Link className="btn btn-dark my-3" to={to1}>
+            {link1}
           </Link>
 
-          <Link className="btn btn-dark my-3" to="/women">
-            SHOP WOMEN'S
+          <Link className="btn btn-dark my-3" to={to2}>
+            {link2}
           </Link>
         </div>
       </div>
@@ -32,7 +32,7 @@ const PromotionSection = () => {
 
 const PromoContainer = styled.div`
   min-height: 70vh;
-  background: #eba17f;
+  background: #ffc1a5;
   width: 100vw;
   display: flex;
   align-items: center;
