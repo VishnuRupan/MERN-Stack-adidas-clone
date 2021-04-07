@@ -14,7 +14,7 @@
 4. [Backend](#Backend)
 5. [Frontend](#Frontend)
 6. [Design](#Design)
-7. [Bugs & Issues](#Bugs-&-Issues)
+7. [Mistakes](#Mistakes)
 8. [What I Learned](#What-I-Learned)
 9. [Developer Comments](#Developer-Comments)
 
