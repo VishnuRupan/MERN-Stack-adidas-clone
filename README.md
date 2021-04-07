@@ -21,3 +21,16 @@
 ## Overview
 The goal for this project was to develop a full stack application using React and Redux. One of the most common full stack applications on the internet are e-commerce websites. I decided to re-create the adidas website and implement the features most useful in e-commerce stores. This was a project to help solidify my knowledge using Redux in React and backend authentication. 
 
+## Features
+- Login and Signup sytem with user authentication and authorization
+- Shopping Cart functionality
+- PayPal/Credit Card payment options
+- User and admin profile screen
+- User orders list
+- Product upload, delete, and modify
+- Search bar
+- Product search filters
+- Product eview and rating system
+- Product quantity and size selection
+- Modift user profile information and password   
+
