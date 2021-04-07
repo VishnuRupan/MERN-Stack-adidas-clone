@@ -10,7 +10,7 @@
 ## Table of Contents
 1. [Overview](#Overview)
 2. [Features](#Features)
-3. [Technologies Used](#Technologies Used)
+3. [Technologies](#Technologies Used)
 4. [Backend](#Backend)
 5. [Frontend](#Frontend)
 6. [Design](#Design)
