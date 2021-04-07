@@ -24,13 +24,14 @@ The goal for this project was to develop a full stack application using React an
 ## Features
 - Login and Signup sytem with user authentication and authorization
 - Shopping Cart functionality
+- Checkout process
 - PayPal/Credit Card payment options
-- User and admin profile screen
+- Seperate user and admin profile screen
 - User orders list
 - Product upload, delete, and modify
 - Search bar
 - Product search filters
-- Product eview and rating system
+- Product review and rating system
 - Product quantity and size selection
-- Modift user profile information and password   
+- Modify user profile information and password   
 
