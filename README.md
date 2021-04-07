@@ -15,7 +15,7 @@
 5. [Frontend](#Frontend)
 6. [Design](#Design)
 7. [What I Learned](#What-I-Learned)
-8. [Developer Comments](#Developer-Comments)
+8. [Comments](#Comments)
 
 ## Overview
 The goal for this project was to develop a full stack application using React and Redux. One of the most common full stack applications on the internet are e-commerce websites. I decided to re-create the adidas website and implement the features most useful in e-commerce stores. This was a project to help solidify my knowledge using Redux in React and backend authentication. 
