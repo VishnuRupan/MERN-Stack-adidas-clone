@@ -34,12 +34,12 @@ The goal for this project was to develop a full stack application using React an
 
 
 ## Technologies Used
-- React: Building UI components with React Hooks.
-- Redux: Statement management used to hold information for UI components.
-- Node.js & Express.js: Creating backend routes for fetching products.
-- MongoDB: Primary database.
-- JWT (JSON Web Tokens): Backend user authentication.
-- React-Bootstrap: Custom components.
-- styled-components: Creating custom CSS properties.
+- **React:** Building UI components with React Hooks.
+- **Redux:** Statement management used to hold information for UI components.
+- **Node.js & Express.js:** Creating backend routes for fetching products.
+- **MongoDB:** Primary database.
+- **JWT (JSON Web Tokens):** Backend user authentication.
+- **React-Bootstrap:** Custom components.
+- **styled-components:** Creating custom CSS properties.
 
 
