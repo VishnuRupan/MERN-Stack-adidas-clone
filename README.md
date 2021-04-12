@@ -13,9 +13,8 @@
 3. [Technologies Used](#Technologies-Used)
 4. [Backend](#Backend)
 5. [Frontend](#Frontend)
-6. [Design](#Design)
-7. [What I Learned](#What-I-Learned)
-8. [Comments](#Comments)
+6. [What I Learned](#What-I-Learned)
+7. [Comments](#Comments)
 
 ## Overview
 The goal for this project was to develop a full stack application using React and Redux. One of the most common full stack applications on the internet are e-commerce websites. I decided to re-create the adidas website and implement the features most useful in e-commerce stores. This was a project to help solidify my knowledge using Redux in React and backend authentication. 
@@ -45,3 +44,5 @@ The goal for this project was to develop a full stack application using React an
 ## Backend 
 The backend is divided into specific protected and non-protected routes. These routes take controller functions from used to either create, delete, update, or fetch data. Separated in 3 folders for users, products, and orders. For example, product reviews would be handled by updating the existing product field values, which holds a ratings and review field. I verify that the data being recieved is not a duplicate before saving it to the database. If an error occurs when saving the product, a custom error message is thrown depending on the route hit. Routes that require authentication is handled by a protect function to validate the JWT. 
 
+## Frontend 
+The frontend design was inspired by the adidas site. Using React-Bootstrap, I was able use its grid system to replicate a similar design layout. The frontend contains the redux store with folders separating the actions and reducers. An action is either dispatched onClick or through useEffect. The process eventually updates the state tree if it was a success, which updates all UI components that depend on a specific state. A failed request/action is handled by React’s conditional rendering, where an Error component will render with a brief description of the error. 
