@@ -42,4 +42,6 @@ The goal for this project was to develop a full stack application using React an
 - **React-Bootstrap:** Custom components.
 - **styled-components:** Creating custom CSS properties.
 
+## Backend 
+The backend is divided into specific protected and non-protected routes. These routes take controller functions from used to either create, delete, update, or fetch data. Separated in 3 folders for users, products, and orders. For example, product reviews would be handled by updating the existing product field values, which holds a ratings and review field. I verify that the data being recieved is not a duplicate before saving it to the database. If an error occurs when saving the product, a custom error message is thrown depending on the route hit. Routes that require authentication is handled by a protect function to validate the JWT. 
 
