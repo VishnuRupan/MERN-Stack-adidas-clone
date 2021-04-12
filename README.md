@@ -36,7 +36,7 @@ The goal for this project was to develop a full stack application using React an
 - **React:** Building UI components with React Hooks.
 - **Redux:** Statement management used to hold information for UI components.
 - **Node.js & Express.js:** Creating backend routes for fetching products.
-- **MongoDB:** Primary database.
+- **MongoDB:** Primary database and Mongoose ODM
 - **JWT (JSON Web Tokens):** Backend user authentication.
 - **React-Bootstrap:** Custom components.
 - **styled-components:** Creating custom CSS properties.
@@ -45,4 +45,4 @@ The goal for this project was to develop a full stack application using React an
 The backend is divided into specific protected and non-protected routes. These routes take controller functions from used to either create, delete, update, or fetch data. Separated in 3 folders for users, products, and orders. For example, product reviews would be handled by updating the existing product field values, which holds a ratings and review field. I verify that the data being recieved is not a duplicate before saving it to the database. If an error occurs when saving the product, a custom error message is thrown depending on the route hit. Routes that require authentication is handled by a protect function to validate the JWT. 
 
 ## Frontend 
-The frontend design was inspired by the adidas site. Using React-Bootstrap, I was able use its grid system to replicate a similar design layout. The frontend contains the redux store with folders separating the actions and reducers. An action is either dispatched onClick or through useEffect. The process eventually updates the state tree if it was a success, which updates all UI components that depend on a specific state. A failed request/action is handled by React’s conditional rendering, where an Error component will render with a brief description of the error. 
+The frontend design was inspired by the adidas site. Using React-Bootstrap, I was able use its grid system to replicate a similar design layout. The frontend contains the redux store with folders separating the actions and reducers. An action is either dispatched onClick or through useEffect. The process eventually updates the state tree if it was a success, which updates all UI components that depend on a specific state. A failed request/action is handled by React’s conditional rendering, where an Error component will render with a brief description of the error.Working with redux allowed me to understand the flow of creating a reducer and action to along with it and dispatching that action in either components or screens. Rather than lifting state, you can pull everything with useSelector from the state tree. 
