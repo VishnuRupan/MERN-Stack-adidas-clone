@@ -150,7 +150,13 @@ const CartScreen = ({ history }) => {
                         acc + Number(item.qty) * Number(item.price),
                       0
                     )
-                    .toFixed(2) < 100 ? (
+                    .toFixed(2) < 100 && cartItems
+                    .reduce(
+                      (acc, item) =>
+                        acc + Number(item.qty) * Number(item.price),
+                      0
+                    )
+                    .toFixed(2) > 0  ? (
                     <p> C$ 100</p>
                   ) : (
                     <p> FREE</p>
